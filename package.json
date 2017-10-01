@@ -10,6 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "deploy" : "aws s3 sync --delete ./dist s3://dev.moodleadminui.com",
+    "install-angular" : "npm install -g @angular/cli",
     "cloudformation-package-dev" : "aws cloudformation package --template-file dev-s3-static-site-template.yml --output-template-file dev-output.yml --s3-bucket elasticbeanstalk-moodle-deployables",
     "cloudformation-deploy-dev" : "aws cloudformation deploy --template-file dev-output.yml --capabilities CAPABILITY_IAM --stack-name dev-moodle-tenant-s3 --parameter-overrides RootDomainName=vssdevelopment.com"
     
