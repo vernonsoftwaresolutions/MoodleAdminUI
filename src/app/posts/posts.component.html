@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>URL</th>
+          <th>Status</th>
+          <th>Creation Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stack of stacks">
+          <td>{{stack.stackName}}</td>
+          <!--This is very brittle-->
+          <td>http://{{stack.parameters[0].parameterValue}}.{{stack.parameters[1].parameterValue}}</td>
+          <td>{{stack.stackStatus}}</td>
+          <td>{{stack.creationTime | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
