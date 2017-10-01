@@ -14,7 +14,7 @@ dependencies:
 test:
   override:
     - npm test
-    - npm build
+    - npm run build
 
 deployment:
   development:
