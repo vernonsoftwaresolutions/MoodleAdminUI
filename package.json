@@ -5,10 +5,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build && node server.js",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy" : "aws s3 sync --delete ./dist s3://dev.moodleadminui.com",
+    "cloudformation-package-dev" : "aws cloudformation package --template-file dev-s3-static-site-template.yml --output-template-file dev-output.yml --s3-bucket elasticbeanstalk-moodle-deployables",
+    "cloudformation-deploy-dev" : "aws cloudformation deploy --template-file dev-output.yml --capabilities CAPABILITY_IAM --stack-name dev-moodle-tenant-s3 --parameter-overrides RootDomainName=vssdevelopment.com"
+    
   },
   "private": true,
   "dependencies": {
@@ -25,6 +29,7 @@
     "body-parser": "^1.17.2",
     "core-js": "^2.4.1",
     "express": "^4.15.4",
+    "lodash": "^4.17.4",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
@@ -50,4 +55,3 @@
     "typescript": "~2.3.3"
   }
 }
-

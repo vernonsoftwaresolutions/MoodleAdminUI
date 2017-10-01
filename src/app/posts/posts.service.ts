@@ -9,6 +9,7 @@ export class PostsService {
 
   // Get all posts from the API
   getAllPosts() {
+    //todo-add some sort of loading animation
     return this.http.get('https://cfstack.vssdevelopment.com/dev/moodle/stacks?tagKey=TYPE&tagValue=TENANT')
       .map(res => res.json());
   }

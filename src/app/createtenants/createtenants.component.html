@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="page-content">
+        <div class="creation-form-wrapper">
+          <h1>Create Your New Moodle Site</h1>
+          <p>Enter your company's <strong>Moodle URL.</strong></p>
+          <div class="input-wrapper">
+            <input placeholder="company name" #companyName>
+            <span>.vssdevelopment.com</span>
+          </div>
+          <button class="btn btn-primary" (click)="submitTenant(companyName.value)"><span class="arrow-icon"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a routerLink="/tenants"><button class="btn btn-success pull-right" > View Moodle Tenants</button></a>
+  
+</div>

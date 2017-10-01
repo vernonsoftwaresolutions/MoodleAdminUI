@@ -1,0 +1,22 @@
+machine:
+  python:
+    version: 2.7.11
+
+dependencies:
+  pre:
+     - pip install awscli
+     - aws configure set default.region us-west-2
+     - npm install  # -dev
+
+test:
+  override:
+    - npm test
+    - npm build
+
+deployment:
+  development:
+    branch: master
+    commands:
+      - npm run cloudformation-package-dev
+      - npm run cloudformation-deploy-dev
+      - npm run deploy
