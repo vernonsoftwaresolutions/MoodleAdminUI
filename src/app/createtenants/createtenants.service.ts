@@ -12,7 +12,7 @@ export class CreateTenantService {
   // Get all posts from the API
   createTenant(tenant: Tenant ) {
     //todo-got to be a better way to do this than the getData method
-    return this.http.post('https://api.vssdevelopment.com/dev/moodle/tenants',tenant.getData())
+    return this.http.post('https://api.vssdevelopment.com/dev/moodle/tenants', tenant.getData())
       .map(res => res.json());
   }
 }

@@ -17,20 +17,23 @@ export class CreatetenantsComponent implements OnInit {
   }
 
   submitTenant(companyName: string){
-    let randomPriority = Math.floor(Math.random() * 100) + 1  
-    
-    let tenant = new Tenant({
-      "stackName": "moodle-ecs-single",
-      "clientName": companyName,
-      "vpcId": "vpc-c7aa77be",
-      "hostedZoneName": "vssdevelopment.com",
-      "priority": randomPriority.toString()
+    const randomPriority = Math.floor(Math.random() * 100) + 1;
+
+    //todo-make service call to retrieve these
+    const tenant = new Tenant({
+      'stackName': 'moodle-ecs-single',
+      'clientName': companyName,
+      'vpcId': 'vpc-c7aa77be',
+      'hostedZoneName': 'vssdevelopment.com',
+      'priority': randomPriority.toString()
     });
-    console.log("About to send object:");
+    
+    console.log('About to send object:');
     console.log(tenant);
-    this.createService.createTenant(tenant).subscribe(res =>{
+
+    this.createService.createTenant(tenant).subscribe(res => {
       //todo- update this to be a pretty message
-      alert("Tenant Creation In Progress ")
+      alert('Tenant Creation In Progress');
       console.log(res);
     });
   }

@@ -6,7 +6,7 @@ import {CreateTenantService} from './createtenants.service';
 
 describe('CreatetenantsComponent', () => {
   class CreateTenantServiceMock {
-    createTenant(): Observable<CreateTenantService> { return Observable.of() }
+    createTenant(): Observable<CreateTenantService> { return Observable.of(); }
   }
   let component: CreatetenantsComponent;
   let fixture: ComponentFixture<CreatetenantsComponent>;
@@ -24,7 +24,7 @@ describe('CreatetenantsComponent', () => {
         ]
       }
     });
-    
+
   }));
 
   beforeEach(() => {

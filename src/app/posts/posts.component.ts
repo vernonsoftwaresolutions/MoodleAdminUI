@@ -13,7 +13,16 @@ export class PostsComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-    console.log("routing to posts component")
+    this.getTenants();
+  }
+  refresh(){
+    this.stacks = [];
+    console.log("refreshing...")
+    this.getTenants();
+  }
+
+  getTenants(){
+    console.log('routing to posts component');
     // Retrieve posts from the API
     this.postsService.getAllPosts().subscribe(stacks => {
       this.stacks = stacks;
