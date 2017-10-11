@@ -12,9 +12,14 @@
       <tbody>
         <tr *ngFor="let stack of stacks">
           <td>{{stack.stackName}}</td>
-          <!--This is very brittle-->
-          <td>http://{{stack.parameters[0].parameterValue}}.{{stack.parameters[1].parameterValue}}</td>
-          <td>{{stack.stackStatus}}</td>
+          <td>
+            <a href="http://{{stack.url}}">
+              <div style="height:100%;width:100%">
+                http://{{stack.url}}              
+              </div>
+            </a>
+          </td>
+          <td>{{stack.status}}</td>
           <td>{{stack.creationTime | date}}</td>
         </tr>
       </tbody>

@@ -15,6 +15,7 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     this.getTenants();
   }
+  
   refresh(){
     this.stacks = [];
     console.log("refreshing...")
