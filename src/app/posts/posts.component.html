@@ -21,6 +21,7 @@
           </td>
           <td>{{stack.status}}</td>
           <td>{{stack.creationTime | date}}</td>
+          <td><button class="btn btn-danger" (click)="deleteTenant(stack.stackName)" >Delete</button></td>
         </tr>
       </tbody>
     </table>

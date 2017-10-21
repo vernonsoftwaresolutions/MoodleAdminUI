@@ -13,4 +13,11 @@ export class PostsService {
     return this.http.get('https://cfstack.vssdevelopment.com/dev/moodle/stacks?tagKey=TYPE&tagValue=TENANT')
       .map(res => res.json());
   }
+
+  // Delete a stack given it's stack name
+  deleteStack(stackName: string) {
+    //not the best practice to do string concatentation here but im okay with it for now getting to MVP
+    return this.http.delete('https://cfstack.vssdevelopment.com/dev/moodle/stacks/' + stackName)
+    .map(res => res.json());
+  }
 }

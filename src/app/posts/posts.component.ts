@@ -29,4 +29,14 @@ export class PostsComponent implements OnInit {
       this.stacks = stacks;
     });
   }
+
+  deleteTenant(stackname: string){
+    console.log("about to delete tenant " + stackname);
+    //delete stack using api
+    this.postsService.deleteStack(stackname).subscribe(result => {
+      alert("Stack Delete in Progress for stack " + stackname);
+      console.log("refreshing list")
+      this.refresh();
+    })
+  }
 }
