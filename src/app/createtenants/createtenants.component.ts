@@ -22,7 +22,7 @@ export class CreatetenantsComponent implements OnInit {
     //todo-make service call to retrieve these
     const tenant = new Tenant({
       'stackName': 'moodle-ecs-single',
-      'clientName': companyName,
+      'clientName': companyName.toLowerCase(),
       'vpcId': 'vpc-c7aa77be',
       'hostedZoneName': 'vssdevelopment.com',
       'priority': randomPriority.toString()

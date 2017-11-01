@@ -48,3 +48,7 @@ h1{
 .arrow-icon::before{
 content: "Create instance";
 }
+
+.lowercase {
+    text-transform: lowercase;
+}
