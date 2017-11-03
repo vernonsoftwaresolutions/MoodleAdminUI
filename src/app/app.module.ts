@@ -9,6 +9,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostsService } from './posts/posts.service';
 import { CreatetenantsComponent } from './createtenants/createtenants.component';
 import { CreateTenantService } from './createtenants/createtenants.service';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const ROUTES = [
   {
@@ -21,6 +22,10 @@ const ROUTES = [
     component: PostsComponent
   },
   {
+    path: 'sign-up',
+    component: SignUpComponent
+  },
+  {
     path: 'createtenants',
     component: CreatetenantsComponent
   }
@@ -29,7 +34,8 @@ const ROUTES = [
   declarations: [
     AppComponent,
     PostsComponent,
-    CreatetenantsComponent
+    CreatetenantsComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
